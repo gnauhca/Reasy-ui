@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ajaxmessage test</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+<style>
+body {margin: 20px; text-align: center;}
+#handleArea {position: fixed; top: 50px; left: 0; z-index: 99999999999999;}
+
+</style>
+</head>
+<body>
+<div id="handleArea">
+	<input type="text" value="Hello Baymax" id="str">
+	<button class="btn" id="btnShow">Show AjaxMessage</button>
+	<button class="btn" id="btnHide">Hide AjaxMessage</button>	
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+<h1>al  asdfasdf  asdfasdfasdf  asdfasdfetasf  asdfasdf  asdf  asdfas dfa asdf   asdfa sdfj</h1>
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+var a;
+
+
+$("#btnShow").on("click", function() {
+	a = $.ajaxMessage($("#str").val());
+});
+$("#btnHide").on("click", function() {
+	if (a) {
+		a.hide();
+	}
+});
+
+</script>
+</body>
+</html>

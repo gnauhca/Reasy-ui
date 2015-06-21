@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>checktest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+</head>
+<body>
+<input type="text" id="placeholderIpt" placeholder="some placeholder here">
+<input type="password" id="passwordIpt" data-role="visiblepassword" placeholder="password placeholder here">
+
+
+
+<div>ip: <input type="text" name="" id="" class="validatebox" data-options='{"type": "ip"}'></div>
+
+<div>len: <input id="lenIpt" type="text" class="validatebox" data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'></div>
+<div>bytelen: <input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}]'></div>
+
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+$("#lenIpt").check();
+
+</script>
+</body>
+</html>

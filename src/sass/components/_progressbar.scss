@@ -1,0 +1,69 @@
+/**
+ * UI progress bar.
+ *
+ * @section progress bar
+ */
+
+.loading-wrap {
+    position: fixed;
+    z-index: 3000;
+    top: 30%;
+    left: 50%;
+
+    width: $probar-bar-width;
+    height: $probar-wrap-height;
+    margin-left: -1 * ($probar-bar-width/2);
+
+    text-align: center;
+}
+
+
+.loading-bar-wrap {
+    display: inline-block;
+
+    width: $probar-bar-width;
+    height: $probar-bar-height;
+    margin-top: $probar-percent-margin;
+    margin-bottom: $probar-des-margin;
+
+    text-align: left;
+
+    background-color: #eee;
+    @include border-radius($probar-bar-radius);
+}
+
+.loading-bar {
+    display: inline-block;
+    float: left;
+    height: $probar-bar-height;
+
+    background: #{$probar-bar-color};
+
+    @include border-radius($probar-bar-radius);
+    &:after {
+        display: block;
+        content: "";
+        width: $probar-bar-height;
+        height: $probar-bar-height;
+        background: #fff;
+        box-shadow: 0 0 6px rgb(255,255,255);
+        @include border-radius($probar-bar-radius); 
+        float: right;
+    }
+}
+
+.loading-des {
+    font-size: $probar-des-ft-size;
+    color: #fff;
+}
+
+.loading-percent {
+    display: block;
+    width: 100%;
+    height: $probar-wrap-height/1.5;
+    font-size: $probar-wrap-height/1.5;
+    line-height: $probar-wrap-height/1.5;
+    letter-spacing: -2px;
+    color: #fff;
+    @include opacity($probar-des-ft-opacity);
+}

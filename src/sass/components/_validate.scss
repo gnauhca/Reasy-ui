@@ -1,0 +1,83 @@
+/**
+ * UI validate.
+ *
+ * @section validate
+ */
+
+.form-control {
+    display: inline-block;
+}
+
+.validatebox-tip-wrap
+{
+    &.ani-init
+    {
+        transition: all .2s;
+        transform: translate(-20px, 0px) rotateX(270deg);
+    }
+    &.ani-final
+    {
+        transform: none;
+    }
+}
+
+
+.validatebox-tip
+{
+    position: absolute;
+    /*visibility: hidden;*/
+    z-index: $validate-zidx;
+
+    width: $validate-width;
+    height: auto;
+}
+
+.validatebox-em .validatebox-tip
+{
+    top: 0;
+    left: 1px;
+}
+.validatebox-tip-content
+{
+    font-size: $validate-tip-ft-size;
+
+    position: absolute;
+    z-index: $validate-zidx;
+    top: -3px;
+    left: 8px;
+
+    display: inline-block;
+
+    max-width: $validate-width;
+    padding: $validate-content-padding;
+
+    color: $validate-ft-color;
+    border: $validate-border;
+    background-color: $validate-bg-color;
+}
+.validatebox-tip-pointer
+{
+    position: absolute;
+    z-index: $validate-zidx+1;
+    top: 2px;
+    left: 1px;
+
+    display: inline-block;
+
+    width: 8px;
+    height: 16px;
+
+    background: url('../img/validatebox_arrows.png') no-repeat -4px center;
+}
+
+.validatebox-invalid, input.validatebox-invalid, input.validatebox-invalid:focus
+{
+    border: 1px solid $validate-invalid-color;
+}
+
+.validatebox-invalid input.text
+{
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}

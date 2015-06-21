@@ -1,0 +1,116 @@
+/**
+ * Class button.
+ *
+ * @section button
+ */
+.btn {
+	display: inline-block;
+
+	width: auto;
+	padding: 3px 14px;
+	border: 1px solid #ccc;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+	background-color: #f4f4f4;
+	line-height: 20px;
+	color: #333333;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: visible;
+	cursor: pointer;
+
+	@include towColorGradient(#ffffff, #e3e3e3);
+	@include border-radius(4px);
+	
+	
+	
+	/* For ie7 */
+	*height: 30px;
+	*display: inline;
+	*margin-left: .3em;
+	*zoom: 1;
+
+}
+
+/* Opera and Firefcx nosupport change line-height, default line-height is 16px*/
+input.btn {
+	line-height: 16px;
+	padding: 5px 14px;
+}
+
+.btn-em {
+	border-color: #777;
+	border-bottom-color: #777;
+}
+
+.btn:hover,
+.btn:focus {
+	border: 1px solid #ed7020;
+}
+
+.btn.active,
+.btn:active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	 -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn.disabled, .btn[disabled],
+.btn-em.disabled, .btn-em[disabled],
+.disabled .btn  {
+	border: 1px solid #ccc;
+	background-image: none;
+	cursor: not-allowed;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+}
+
+.btn.disabled:hover, .btn[disabled]:hover,
+.disabled .btn {
+  border: 1px solid #ccc;
+}
+
+.btn-large {
+	padding: 9px 16px;
+	border-radius: 5px;
+	font-size: 16px;
+	line-height: normal;
+}
+
+.btn-small {
+	padding: 3px 12px;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.btn-mini {
+	padding: 2px 6px;
+	font-size: 12px;
+	line-height: 17px;
+}
+
+.btn-link{
+	margin-top:15px;
+	text-decoration:none;
+}
+
+.btn-group {
+	text-align: center;
+	margin-top: 20px;
+}
+.btn-group .btn-link,
+.btn-group .btn {
+	margin-left: 15px;
+}
+
+.btn-group-right {
+	text-align: right;
+}
+
+.btn-group-right .btn-link,
+.btn-group-right .btn {
+	margin-right: 15px;
+}

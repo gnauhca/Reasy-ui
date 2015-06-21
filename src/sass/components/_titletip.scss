@@ -1,0 +1,21 @@
+/*title tip*/
+
+.title-tip {
+    position: absolute;
+    max-width: 300px;
+    padding: 5px 16px;
+    color: #ed7020;
+    border: 1px solid #ed7020;
+    background: #fff;
+    white-space: nowrap;
+    @include border-radius(4px);
+    @include box-shadow(1px 1px 3px #aaa);
+
+
+    &.ani-init {
+    	transition: opacity 0.3s, transform 0.3s;
+    }
+    &.ani-final {
+    	
+    }
+}

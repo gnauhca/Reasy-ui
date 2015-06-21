@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>combinetest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+<style>
+body {margin: 20px;}
+.part {border: 1px solid #ccc; border-radius: 10px; padding: 20px;}
+div {margin: 2px;}
+</style>
+</head>
+<body>
+
+<br>
+<div id="part1" class="part">
+	<h1>part1</h1>
+	<div><input type="text" id="newPwd" class="validatebox">新密码 #newPwd</div>
+	<div><input type="text" id="confirmPwd" class="validatebox" data-options='{"combineType": "equal", "relativeElems": ["self","#newPwd"], "msg": "两次密码输入不一致"}'>确认密码 data-options='{"combineType": "equal", "relativeElems": "relativeElems": ["self","#equal"], "msg": "两次密码输入不一致"}</div>
+
+	<br>
+	<br>
+
+
+	<div><input type="text" id="ip" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "static", "relativeElems": ["self", "#gateway", "#mask"], "msg": ""}]'>
+		ip地址 data-options='[{"type": "ip"}, {"combineType": "static", "relativeElems": ["self", "#gateway", "#mask"], "msg": ""}]'</div>
+	<div><input type="text" id="mask" class="validatebox"  data-options='{"type": "mask"}'>子网掩码 data-options='{"type": "mask"}'</div>
+	<div><input type="text" id="gateway" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "static", "relativeElems": ["#ip", "self", "#mask"], "msg": ""}]'>
+	默认网关 data-options='[{"type": "ip"}, {"combineType": "static", "relativeElems": ["#ip", "self", "#mask"], "msg": ""}]'</div>
+
+	<br>
+	<div><input type="text" id="dns1" required class="validatebox"  data-options='{"type": "ip", "msg": ""}'>主DNS required data-options='{"type": "ip"}'</div>
+	<div><input type="text" id="dns2" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "notequal", "relativeElems": ["#dns1", "self"], "msg": "主次DNS不能相同"}]'>
+	次DNS data-options='[{"type": "ip"}, {"combineType": "notequal", "relativeElems": ["#dns1", "self"], "msg": "主次DNS不能相同"}]'</div>
+
+</div>
+<br>
+
+<hr><hr>
+
+	<input type="button" class="btn" id="submit1" value="check All">
+
+
+
+<br><br>
+
+
+<h2 style="position: fixed; top: 20px; right:20px; width:200px; box-shadow: 2px 2px 6px #333; padding: 5px; background: #fff;">check result: <span id="tip"></span></h2>
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+var validateObj = null;
+$("#submit1").on("click", function() {
+	validateObj1.checkAll();
+});
+validateObj1 = $.validate({
+	wrapElem: "#part1",
+	success: function() {
+		$("#tip").stop().hide().html("success").fadeIn(1000);
+		$.alert("success");
+	},
+	error: function() {
+		$("#tip").stop().hide().html("error").fadeIn(1000);
+		$.alert("error");
+	}
+});
+
+
+</script>
+</body>
+</html>

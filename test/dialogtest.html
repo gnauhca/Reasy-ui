@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>dialogtest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+</head>
+<body>
+<input type="button" class="btn" value="alert" id="btn1">
+<input type="button" class="btn" value="dialog1" id="btn2">
+<input type="button" class="btn" value="dialog2" id="btn3">
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+var dialog1 = $.dialog({
+	show: false,//是否显示
+	showNoprompt: false,//显示不再提示勾选框
+	model: 'message',//or message
+	title: '来自网页的消息',
+	content: 'dialog1',
+	apply: null,//点击确定时的回调
+	cancel: null//点击取消时的回调
+});
+var dialog2 = $.dialog({
+	show: false,//是否显示
+	showNoprompt: false,//显示不再提示勾选框
+	model: 'dialog',//or message
+	title: '来自网页的消息',
+	content: 'dialog2',
+	apply: function() { $.alert("apply2")},//点击确定时的回调
+	cancel: function() { $.alert("cancel2")}//点击取消时的回调
+});
+var dialog3 = $.dialog({
+	show: false,//是否显示
+	showNoprompt: false,//显示不再提示勾选框
+	model: 'dialog',//or message
+	title: '来自网页的消息',
+	content: 'dialog3',
+	apply: function() { $.alert("apply3")},//点击确定时的回调
+	cancel: function() { $.alert("cancel3")}//点击取消时的回调
+});
+
+$("#btn1").on("click", function() {
+	dialog1.open();
+});
+$("#btn2").on("click", function() {
+	dialog2.open();
+});
+$("#btn3").on("click", function() {
+	dialog3.open();
+});
+
+</script>
+</body>
+</html>

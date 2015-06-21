@@ -1,0 +1,79 @@
+$main-color: #ed7020; //主色调
+$main-font-color: #333;
+
+//mask
+
+$mask-zidx: 1999;
+$mask-black-opacity: 0.7;
+$mask-white-opacity: 0.8;
+
+
+//ajaxmessage
+$ajax-msg-zidx: 2000;
+$ajax-msg-top: 20%;
+$ajax-msg-ft-color: #ed7020; //字体颜色
+$ajax-msg-ft-size: 24px; //字体颜色
+$ajax-msg-ft-weight: bold; 
+$ajax-msg-bd-radius: 6px;
+$ajax-msg-bg-color: #fc0;
+
+$ajax-msg-start-color: #ed7020;//渐变开始颜色
+$ajax-msg-end-color: #fc0;//渐变结束颜色
+
+//alert
+
+$alert-zidx: 3000;
+$alert-color: #eee;
+$alert-bg-color: rgba(150, 0, 0, 0.7);
+$alert-radius: 4px;
+$alert-padding: 10px 30px;
+$alert-min-width: 150px;
+$alert-max-width: 400px;
+
+
+
+//dialog
+$dialog-zidx: 2000;
+$dialog-font-color: $main-font-color;
+$dialog-close-btn-color: #666;
+$dialog-title-height: 36px;//标题高度
+$dialog-top: 15%;
+$dialog-main-color: $main-color;
+
+
+//input-select
+$iptslt-menu-zidx: 100;
+$iptslt-menu-padding: 5px 0;//下拉菜单padding
+$iptslt-item-padding: 3px 8px;
+$iptslt-item-fsize: 14px;
+
+$iptslt-item-color: $main-font-color;
+$iptslt-item-focus-color: $main-color;
+
+
+$iptslt-ipt-radius: 4px 0 0 4px;//输入框圆角
+$iptslt-btn-radius: 0 4px 4px 0;//按钮圆角
+$iptslt-menu-radius: 6px;//下拉菜单圆角
+$iptslt-caret-width: 8px; //箭头宽度
+
+//validate
+$validate-zidx: 999;
+$validate-width: 240px; //警告提示宽度限制
+$validate-content-padding: 3px 5px; //内容padding
+$validate-tip-ft-size: 12px; //内容字体大小
+$validate-invalid-color: #f00;//不合法边框颜色
+$validate-border: 1px solid #c93;//内容边框
+$validate-bg-color: #ffc;//内容背景
+$validate-ft-color: #333;
+
+//progressbar
+$probar-wrap-height: 100px;
+$probar-bar-height: 4px;
+$probar-bar-radius: 2px;
+$probar-bar-width: 60%;
+$probar-bar-color: $main-color;
+$probar-des-ft-size: 14px;
+$probar-des-ft-opacity: 0.9;
+
+$probar-percent-margin: 10px;
+$probar-des-margin: 10px;

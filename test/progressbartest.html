@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>progressbartest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+<style>
+.div {width: 200px; height: 200px; border-radius: 10px; background: ; margin: 20px; line-height: 100px; text-align: center; float: left; color: #000;}
+#handleArea {position: fixed; bottom: 50px; left: 0; z-index: 99999999999999; background: #fff; padding: 20px;}
+</style>
+</head>
+<body style="background: url(bg.png) center;">
+
+<div id="handleArea">
+	<input type="text" value="50" id="str">
+	<button class="btn" id="btnSetPercent">set Progress</button><br>
+
+	<input type="text" value="正在升级..." id="msg">
+	<button class="btn" id="btnStart">start</button>$.progressBar().run(5000, "正在升级...");<br>
+
+
+	<button class="btn" id="btnDistroy">distroy</button>$.progressBar().distroy();<br>	
+	<button class="btn" id="btnNoTime">NoTime</button>$.progressBar().run(0, "没时间");<br>	
+	<p>task length: <span id="tip"></span></p>
+</div>
+
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+
+
+
+$("#btnSetPercent").on("click",function() {
+	$.progressBar().set($("#str").val(), "手动设置的百分比", function() {$.alert("hanset successfully")});
+});
+
+$("#btnStart").on("click",function() {
+	$.progressBar().run(5000, $("#msg").val());
+	$.alert($.progressBar().getTaskNum() + " waiting...")
+});
+
+$("#btnDistroy").on("click",function() {
+	$.progressBar().distroy();
+});
+
+$("#btnNoTime").on("click",function() {
+	$.progressBar().run(0, "没时间");
+});
+
+</script>
+</body>
+</html>

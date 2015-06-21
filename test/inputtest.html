@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>inputtest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+</head>
+<body>
+<input type="text" id="placeholderIpt" placeholder="some placeholder here">
+<input type="password" id="passwordIpt" data-role="visiblepassword" placeholder="password placeholder here">
+
+
+<div class="control-group dev-manage">
+    <label for="" class="control-label">登录IP地址</label>
+    <div class="controls">
+        <span id="toselect" class="validatebox" required ddata-options='{"type": "num"}'></span>
+    </div>
+</div>
+<span id="toselect2" class="validatebox" required="required"  data-options='{"type": "num", "args": [1,2000]}'></span>
+
+
+<span id="mac" class="validatebox" data-options='{"type": "mac"}'></span>
+
+<br><br>
+<div>ip: <input type="text" name="" id="" class="validatebox" data-options='{"type": "ip"}'></div>
+<div>len: <input type="text" class="validatebox" data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'></div>
+<div>bytelen: <input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}]'></div>
+
+
+<div>floatCorrect: <input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'></div>
+
+
+<input type="button" id="submit" value="ok">
+<span id="tip"></span>
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+var validateObj = null;
+$("#submit").on("click", function() {
+	validateObj.checkAll();
+});
+
+validateObj = $.validate({
+			success: function() {
+				$("#tip").html("success");
+				basicCheckPass = true;
+			},
+			error: function() {
+				$("#tip").html("error");
+			}
+		});
+$("#toselect").toSelect({
+				"initVal": 7,
+				"units": "Mbps",
+				"size": "small",
+				"seeAsTrans": true,
+				"toggleEable": 1,
+				".devider": "devider",
+				"options": [{
+					"0": "无限制",
+					"1": "1.0Mbps",
+					"2": "2.0Mbps",
+					"4": "4.0Mbps",
+					".divider": ".divider"
+				}]
+			})
+
+$("#toselect2").toSelect({
+				"initVal": 7,
+				"units": "Mbps",
+				"editable": "1",
+				"size": "small",
+				"seeAsTrans": true,
+				"toggleEable": 1,
+				".devider": "devider",
+				"options": [{
+					"0": "无限制",
+					"1": "1.0Mbps",
+					"2": "2.0Mbps",
+					"4": "4.0Mbps",
+					".divider": ".divider",
+					".hand-set":"手动设置"
+				}]
+			});
+
+$("#mac").toTextboxs("mac");
+
+</script>
+</body>
+</html>

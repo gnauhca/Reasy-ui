@@ -1,0 +1,35 @@
+/**
+ * Class table.
+ *
+ * @section table
+ */
+.table {
+	width: 100%;
+	margin: 18px 0;
+}
+.table th, .table td {
+	padding: 4px;
+	padding-left: 8px;
+	border: 1px solid #dddddd;
+	line-height: 20px;
+	text-align: left;
+	vertical-align:middle;
+}
+.table th {
+	background-color: #f5f5f5;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.table-fixed {
+	table-layout: fixed;
+}
+.table-fixed  tr  td.fixed, .table-fixed  tr  th.fixed {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: keep-all;
+	white-space: nowrap;
+}
+.table-fixed  tr  td[title], .table-fixed  tr  th[title] {
+	cursor: pointer;
+}

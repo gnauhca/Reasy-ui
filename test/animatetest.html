@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>animatetest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+</head>
+<body>
+
+<div id="div" style="width: 200px; height: 200px; background: #abcdef;"></div>
+
+<input type="button" id="showBtn" value="show">
+<input type="button" id="hideBtn" value="hide">
+<span id="tip"></span>
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+$("#showBtn").on("click",function() {
+	$("#div").animateShow(500);
+});
+
+$("#hideBtn").on("click",function() {
+	$("#div").animateHide(500);
+});
+
+
+</script>
+</body>
+</html>

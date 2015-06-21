@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>validatetest</title>
+<link rel="stylesheet" href="../dist/css/reasy-ui.css">
+<style>
+body {margin: 20px;}
+.part {border: 1px solid #ccc; border-radius: 10px; padding: 20px;}
+div {margin: 2px;}
+</style>
+</head>
+<body>
+
+
+<div>网速: <span id="toselect" class="validatebox" required data-options='{"type": "num"}'></span></div>
+
+
+
+<div>mac: <span id="mac" class="validatebox" data-options='{"type": "mac"}'></span></div>
+
+<br>
+<div id="part1" class="part">
+	<h1>part1</h1>
+	<div><input type="text" name="" id="" required class="validatebox">no data-options</div>
+	<div><input type="text" name="" id="" class="validatebox" data-options='{"type": "ip","msg": "请表逗"}'>data-options='{"type": "ip","msg": "请表逗"}'</div>
+	<div><input type="text" id="equal" class="validatebox" required  data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'>小明#equal required  data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'</div>
+	<div><input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}, {"combineType": "equal", "relativeElems": ["self","#equal"], "msg": "必须和小明#equal一样"}]'>data-options='[{"type": "byteLen", "args": [3, 8]}, {"combineType": "equal", "relativeElems": ["self","#equal"], "msg": "必须和小明#equal一样"}]'</div>
+	<div><input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'>data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'</div>
+	<input type="button" class="btn" id="submit1" value="check part1">
+</div>
+<br>
+<div id="part2" class="part">
+	<h1>part2</h1>
+	<div><input type="text" name="" id=""class="validatebox" data-options='{"type": "ip"}'>data-options='{"type": "ip"}'</div>
+	<div><input type="text" class="validatebox" required  data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'>required  data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'</div>
+	<div><input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}]'>data-options='[{"type": "byteLen", "args": [3, 8]}]'</div>
+	<div><input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'>data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'</div>
+	<input type="button" class="btn" id="submit2" value="check part2">
+</div>
+
+<hr><hr>
+
+	<input type="button" class="btn" id="submitAll" value="check All">
+
+
+
+<br><br>
+
+
+<h2 style="position: fixed; top: 20px; right:20px; width:200px; box-shadow: 2px 2px 6px #333; padding: 5px; background: #fff;">check result: <span id="tip"></span></h2>
+
+<script src="jquery.js"></script>
+<script src="../dist/js/reasy-ui-1.0.5.js"></script>	
+<script>
+var validateObj = null;
+$("#submit1").on("click", function() {
+	validateObj1.checkAll();
+});
+$("#submit2").on("click", function() {
+	validateObj2.checkAll();
+});
+$("#submitAll").on("click", function() {
+	validateObj.checkAll();
+});
+
+validateObj = $.validate({
+	success: function() {
+		$("#tip").stop().hide().html("success").fadeIn(1000);
+	},
+	error: function() {
+		$("#tip").stop().hide().html("error").fadeIn(1000);
+	}
+});
+
+validateObj1 = $.validate({
+	wrapElem: "#part1",
+	success: function() {
+		$("#tip").stop().hide().html("success").fadeIn(1000);
+	},
+	error: function() {
+		$("#tip").stop().hide().html("error").fadeIn(1000);
+	}
+});
+
+
+validateObj2 = $.validate({
+	wrapElem: "#part2",
+	success: function() {
+		$("#tip").stop().hide().html("success").fadeIn(1000);
+	},
+	error: function() {
+		$("#tip").stop().hide().html("error").fadeIn(1000);
+	}
+});
+
+$("#toselect").toSelect({
+	"initVal": 7,
+	"units": "Mbps",
+	"size": "small",
+	".devider": "devider",
+	"options": [{
+		"0": "无限制",
+		"1": "1.0Mbps",
+		"2": "2.0Mbps",
+		"4": "4.0Mbps",
+		".divider": ".divider",
+		".hand-set": "手动设置"
+	}]
+});
+
+
+$("#mac").toTextboxs("mac");
+
+</script>
+</body>
+</html>

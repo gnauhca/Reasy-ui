@@ -1,0 +1,86 @@
+/**
+ * UI dialog.
+ *
+ * @section dialog
+ */
+
+.dialog {
+	position: fixed;
+	z-index: $dialog-zidx;
+	top: $dialog-top;
+	left: 50%;
+	margin-left: -180px;
+	width: 360px;
+	background-color: #fff;
+	text-align: right;
+	color: $dialog-font-color;
+	font-size: 12px;
+	
+	/* for ie6 */
+	_position: absolute;
+	top: 15%;
+}
+
+.dialog.ani-init {
+	transform: translate(0, -100px);
+	transition: all 0.3s;
+}
+
+.dialog.ani-final {
+	transform: none;
+}
+
+.dialog-title {
+	height: $dialog-title-height;
+	padding-left: 14px;
+	@include towColorGradient(#fafafa, #f2f2f2);
+	color: $dialog-main-color;
+	line-height: $dialog-title-height;
+	text-align: left;
+	font-weight: bold;
+	overflow: hidden;
+
+	span {
+		float: left;
+	}
+}
+
+.dialog .close {
+	float: right;
+	margin-right: 4px;
+	font-size: $dialog-title-height;
+	line-height: $dialog-title-height - 5;
+	color: $dialog-close-btn-color;
+	font-weight: normal;
+	border: none;
+	background: none;
+	cursor: pointer;
+
+	*margin-top: -10px;
+
+	&:hover{
+		color: $dialog-main-color;
+	}
+}
+
+.dialog-content {
+	padding: 10px 16px;
+	text-align: left;
+}
+
+.dialog-content-massage {
+	padding: 20px 16px;
+}
+
+.dialog-content p {
+	text-align: left;
+}
+
+.dialog .dialog-btn-group {
+	border-top: 1px solid #ccc;
+	padding: 6px;
+}
+
+.dialog .dialog-btn-group .btn {
+	margin-left: 12px;
+}
