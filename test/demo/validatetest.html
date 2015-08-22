@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>validatetest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+<style>
+</style>
+</head>
+<body>
+
+
+<div class="demo-panel">
+	<div class="control-group component">Part global</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">网速: </label>
+		<div class="controls"><span id="toselect" class="validatebox" required data-options='{"type": "num"}'></span></div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">MAC: </label>
+		<div class="controls"><span id="mac" required class="validatebox" data-options='{"type": "mac"}'></span></div>
+	</div>
+</div>
+
+<div class="demo-panel" id="part1">
+	<div class="control-group component">Part 1</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">IP: </label>
+		<div class="controls"><input type="text" name="" id="" class="validatebox" data-options='{"type": "ip","msg": "请表逗"}'><br>{"type": "ip","msg": "请表逗"}</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Float: </label>
+		<div class="controls">
+			<input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]'><br>
+			[{"type": "byteLen", "args": [3, 8], "correctType": "float"}]
+			</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">#equal 小明: </label>
+		<div class="controls">
+			<input type="text" id="equal" class="validatebox" required  data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'><br>
+			#equal required  [{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">equal to 小明: </label>
+		<div class="controls">
+			<input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}, {"combineType": "equal", "relativeElems": ["self","#equal"], "msg": "必须和小明#equal一样"}]'><br>
+			[{"type": "byteLen", "args": [3, 8]}, {"combineType": "equal", "relativeElems": ["self","#equal"], "msg": "必须和小明#equal一样"}]
+		</div>
+	</div>
+
+	<div class="control-group">
+		<input type="button" class="btn" id="submit1" value="Check part1">
+	</div>
+</div>
+
+
+<div class="demo-panel" id="part2">
+	<div class="control-group component">Part 2</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">IP</label>
+		<div class="controls">
+			<input type="text" name="" id=""class="validatebox" data-options='{"type": "ip"}'><br>{"type": "ip"}
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Num</label>
+		<div class="controls">
+			<input type="text" class="validatebox" required  data-options='{"type": "num", "args": [1,3]}'>
+			<br>required  {"type": "num", "args": [1,3]}
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Byte length</label>
+		<div class="controls">
+			<input type="text" class="validatebox" data-options='{"type": "byteLen", "args": [3, 8]}'><br>{"type": "byteLen", "args": [3, 8]}
+		</div>
+	</div>
+
+	<div class="control-group">
+		<input type="button" class="btn" id="submit2" value="Check part2">
+	</div>
+
+</div>
+
+<div class="control-group">
+	<input type="button" class="btn" id="submitAll" value="check All">
+</div>
+
+
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+var validateObj = null;
+$("#submit1").on("click", function() {
+	validateObj1.checkAll();
+});
+$("#submit2").on("click", function() {
+	//validateObj2.checkAll();
+	var checkResult2 = validateObj2.check()
+	//console.log(checkResult2);
+	if(!checkResult2) {
+		$.alert("success");
+	}
+});
+$("#submitAll").on("click", function() {
+	validateObj.checkAll();
+
+});
+
+validateObj = $.validate({
+	success: function() {
+		$.alert("success");
+	}
+});
+
+validateObj1 = $.validate({
+	wrapElem: "#part1",
+	success: function() {
+		$.alert("success");
+	}
+});
+
+
+validateObj2 = $.validate({
+	wrapElem: "#part2",
+	success: function() {
+		$.alert("success");
+	}
+});
+
+$("#toselect").toSelect({
+	"initVal": 1,
+	"units": "Mbps",
+	"size": "small",
+	".devider": "devider",
+	"options": [{
+		"0": "无限制",
+		"1": "1.0Mbps",
+		"2": "2.0Mbps",
+		"4": "4.0Mbps",
+		".divider": ".divider",
+		".hand-set": "手动设置"
+	}]
+});
+
+
+$("#mac").toTextboxs("mac");
+
+</script>
+</body>
+</html>

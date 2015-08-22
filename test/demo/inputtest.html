@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>inputtest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+</head>
+<body>
+
+
+<div class="demo-panel">
+
+	<div class="control-group component">
+		<label for="" class="control-label">Placeholder elem</label>
+		<div class="controls">
+			<input type="text" id="placeholderIpt" placeholder="some placeholder here">
+		</div>
+	</div>	
+
+	<div class="control-group">
+		<label for="" class="control-label">Set val </label>
+		<div class="controls">
+			<input type="text" id="placeholderIptVal">  <button class="btn" id="pBtnSetVal">go</button>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Set new placeholder</label>
+		<div class="controls">
+			<input type="text" id="newPlaceholder">  <button class="btn" id="pBtnSetPlaceholder">go</button>
+		</div>
+	</div>	
+
+	<script>
+	$('#pBtnSetVal').on('click', function() {
+		$('#placeholderIpt').val($('#placeholderIptVal').val());
+	});
+
+	$('#pBtnSetPlaceholder').on('click', function() {
+		$('#placeholderIpt').addPlaceholder($('#newPlaceholder').val());
+	});
+	</script>
+</div>
+
+
+
+
+<div class="demo-panel">
+
+	<div class="control-group component">
+		<label for="" class="control-label">Password elem</label>
+		<div class="controls">
+			<input type="password" id="passwordIpt" data-role="visiblepassword" placeholder="password placeholder here">
+		</div>
+	</div>	
+
+	<div class="control-group">
+		<label for="" class="control-label">Set val</label>
+		<div class="controls">
+			<input type="text" id="passwordIptVal">  <button class="btn" id="pwdBtnSetVal">go</button>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Get val</label>
+		<div class="controls">
+			<button class="btn" id="pwdBtnGetVal">Get val</button>
+			result: 
+			<span class="help-inline" id="pwdIptVal"></span>
+		</div>
+	</div>	
+
+	<script>
+	$('#pwdBtnSetVal').on('click', function() {
+		$('#passwordIpt').val($('#passwordIptVal').val());
+	});
+
+	$('#pwdBtnGetVal').on('click', function() {
+		$('#pwdIptVal').text($('#passwordIpt').val());
+	});
+	</script>
+</div>
+
+<div class="demo-panel">
+	<div class="control-group component">
+		<label for="" class="control-label">Cap tip elem</label>
+		<div class="controls"><input type="text" id="iptCap"></div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">tip</label>
+		<div class="controls" id="tipCap"></div>
+	</div>
+
+	<script>
+	$('#iptCap').addCapTip(function(isCapTip) {
+		$('#tipCap').text(isCapTip?"You just input a upper case letter": "You just input a lower case letter");
+	});
+
+	</script>
+</div>
+
+</body>
+</html>

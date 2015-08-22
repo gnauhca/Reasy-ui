@@ -1,0 +1,21 @@
+body {
+	padding:10px 20px;
+}
+
+.demo-panel {
+	padding: 0 10px 10px 10px; 
+	margin: 10px 0;
+	border: 1px solid #abcdef;
+	border-radius: 10px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.component {
+	border-radius: 10px 10px 0 0;
+	padding:  10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 20px;
+	background: #E8F3FF;
+	border-bottom: 1px solid #abcdef;
+}

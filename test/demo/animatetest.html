@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>animatetest</title>
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="../reasy-ui.css">
+</head>
+<body>
+
+<div class="demo-panel">
+	
+	<div class="control-group component">
+		Animate test
+	</div>
+
+	<div class="control-group">
+		<input type="button" class="btn" id="showBtn" value="show">
+		<input type="button" class="btn" id="hideBtn" value="hide">
+		<span id="tip"></span>
+	</div>
+	
+	<div class="control-group">
+		<div id="div" style="width: 200px; height: 200px; background: #abcdef;"></div>
+	</div>
+
+</div>
+
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+$("#showBtn").on("click",function() {
+	$("#div").animateShow(500);
+});
+
+$("#hideBtn").on("click",function() {
+	$("#div").animateHide(500);
+});
+
+
+</script>
+</body>
+</html>

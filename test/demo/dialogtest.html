@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>dialogtest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+<div class="demo-panel">
+	<div class="control-group component">Dialog test</div>
+
+	<div class="control-group">
+		<input type="button" class="btn" value="alert" id="btn1">
+		<input type="button" class="btn" value="dialog" id="btn2">
+	</div>
+
+</div>
+
+
+
+
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+
+
+$("#btn1").on("click", function() {
+	$.dialog().open('警告', '这是个弹出警告框');
+});
+$("#btn2").on("click", function() {
+	$.dialog().open('来自网页的消息', '这是一个对话框', function() {
+		$.alert('Apply callback');
+	}, function() {
+		$.alert('Cancel callback')
+	});
+});
+
+
+</script>
+</body>
+</html>

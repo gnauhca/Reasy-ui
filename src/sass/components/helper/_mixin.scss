@@ -1,0 +1,22 @@
+@mixin towColorGradient($startColor, $endColor) {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+	background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+	background-image: -o-linear-gradient(top, $startColor, $endColor);
+	background-image: linear-gradient(to bottom, $startColor, $endColor);
+	background-image: -moz-linear-gradient(top, $startColor, $endColor);
+	/* For ie7, ie8 */
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}', GradientType=0);
+}
+
+@mixin backgroundOpacity($rgba) {
+	background-color: $rgba;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{ie-hex-str($rgba)}', endColorstr='#{ie-hex-str($rgba)}', GradientType=0);
+	:root & {
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr=#00000000, endColorstr=#00000000, GradientType=0);
+	} 
+}
+
+@mixin opacity($opacity-value) {
+	opacity: $opacity-value;
+	filter: alpha(opacity=#{$opacity-value*100});
+}

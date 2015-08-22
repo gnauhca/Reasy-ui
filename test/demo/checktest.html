@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checktest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="demo-panel">
+	<div class="control-group component">Check test</div>
+	
+	<div class="control-group">
+		<label class="control-label">IP</label>
+		<div class="controls">
+			<input type="text" name="" id="" class="validatebox" data-options='{"type": "ip"}'>
+			{"type": "ip"}
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">IP loose</label>
+		<div class="controls">
+			<input type="text" name="" id="" class="validatebox" data-options='{"type": "ipLoose"}'>
+			{"type": "ipLoose"}
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Length & Num</label>
+		<div class="controls">
+			<input id="lenIpt" type="text" class="validatebox" data-options='[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]'>
+			[{"type": "len", "args": [3, 8]},{"type": "num", "args": [1,2000]}]
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Bytelen</label>
+		<div class="controls">
+			<input type="text" class="validatebox" data-options='[{"type": "byteLen", "args": [3, 8]}]'>
+			[{"type": "byteLen", "args": [3, 8]}]
+		</div>
+	</div>
+		
+</div>
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+$("#lenIpt").check();
+
+</script>
+</body>
+</html>

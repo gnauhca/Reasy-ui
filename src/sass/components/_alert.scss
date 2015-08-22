@@ -1,0 +1,28 @@
+/**
+ * UI alert.
+ *
+ * @section alert
+ */
+
+.wrong-wrap
+{
+    position: fixed;
+    z-index: 10000;
+
+    width: 100%;
+    height: 0px;
+    text-align: center;
+}
+.wrong-tip
+{
+    display: inline-block;
+
+    min-width: $alert-min-width;
+    max-width: $alert-max-width;
+    padding: $alert-padding;
+
+    color: $alert-color;
+    @include backgroundOpacity($alert-bg-color);
+    @include border-radius($alert-radius);
+    box-shadow: 0 0 3px #888;
+}

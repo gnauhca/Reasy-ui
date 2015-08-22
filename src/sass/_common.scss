@@ -1,0 +1,108 @@
+/**
+ * Common tags for all.
+ * @section common
+ */
+html {
+	height: 100%;
+}
+body{	
+	height: 100%;
+	background-color: #fff;
+	color: #333;
+	font: 13px/2 'Microsoft YaHei','Times New Roman';
+	line-height: 20px;
+	
+	*font-size: small; /* for IE */
+	*font: x-small; /* for IE in quirks mode */
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	
+	/* TODO: change border color for you need */
+	border-top:1px solid #ccc;
+	margin: 1em 0;
+	padding: 0
+}
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration:none
+}
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+abbr[title], dfn[title], acronym[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	outline: 0
+}
+
+/* For ie7 when focus has outline */
+a, input[type='radio'] , input[type='checkbox'] {
+	*hide-focus: expression(this.hideFocus=true);
+}
+
+a:hover, a:focus, a:active, a:focus  {
+	outline: 0;
+}
+h1 {
+	font-size: 138.5%;
+}
+h2 {
+	font-size: 123.1%;
+}
+h3 {
+	font-size: 108%;
+}
+
+p {
+	margin-bottom: 6px;
+}
+optgroup { 
+	font-weight:normal;
+}
+
+table {
+	max-width: 100%;
+	background-color: transparent;
+	font-size: inherit;
+}
+pre, code, kbd, samp, tt {
+	font-family: monospace;
+	*font-size: 108%;
+	line-height: 100%;
+}
+pre {
+	margin: .2em 0 0 0;
+	padding: .2em;
+	background: whiteSmoke;
+	border: 1px dotted #785;
+}
+code{
+	white-space: pre;
+}
+a:link acronym[title], a:visited acronym[title] {
+	cursor:pointer;
+}
+
+
+.ani-init {
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.ani-final {
+	opacity: 1;
+}
+
+

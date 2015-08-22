@@ -1,0 +1,18 @@
+/**
+ * UI textboxs.
+ *
+ * @section textboxs
+ */
+.textboxs {
+	display: inline-block;
+	margin-left: -1px;
+	border: 1px solid #fff;
+}
+.textboxs input {
+	text-align: center;
+	margin-left: 1px;
+}
+.textboxs input:first-child,
+.textboxs .first {
+	margin-left: 0;
+}

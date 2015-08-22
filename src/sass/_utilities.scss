@@ -1,0 +1,33 @@
+/**
+ * Class utilities.
+ *
+ * @section utilities
+ */
+.cb {
+	clear:both;
+}
+.none {
+	display:none
+}
+.fl {
+	float:left;
+	display:inline-block;
+}
+.fr {
+	float: right;
+	display: inline-block;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+

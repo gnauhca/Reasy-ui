@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ajaxmessage test</title>
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="../reasy-ui.css">
+<style>
+body {margin: 20px; text-align: center;}
+#handleArea {position: fixed; top: 50px; left: 50px; right: 50px; z-index: 99999999999999;  text-align: center;}
+
+</style>
+</head>
+<body>
+<div id="handleArea">
+	<div class="demo-panel">
+		<div class="control-group component">
+			<input type="text" value="Hello Baymax" id="str">
+			<button class="btn" id="btnShow">Show AjaxMessage</button>
+			<button class="btn" id="btnHide">Hide AjaxMessage</button>				
+		</div>
+	</div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+<h1>something unimportant something unimportant something unimportant something unimportant something unimportant </h1>
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+var a;
+
+
+$("#btnShow").on("click", function() {
+	a = $.ajaxMessage($("#str").val());
+});
+$("#btnHide").on("click", function() {
+	if (a) {
+		a.hide();
+	}
+});
+
+</script>
+</body>
+</html>

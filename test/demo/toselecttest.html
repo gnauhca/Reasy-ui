@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>toselecttest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+<style>
+</style>
+</head>
+<body>
+
+
+<div class="demo-panel">
+	<div class="control-group component">Input select test</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">网速: </label>
+		<div class="controls"><span id="toselect" class="validatebox" required data-options='{"type": "num"}'></span></div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">Disable the widget</label>
+		<div class="controls">
+			<input type="button" value="Disable" id="btnDisable" class="btn">
+			<input type="button" value="Enable" id="btnEnable" class="btn">
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">
+			Get toselect val
+		</label>
+		<div class="controls">
+			<input type="button" value="$('#toselect').val()" class="btn" id="btnGetToselectVal">&nbsp;
+			<span class="help-inline" id="textToselect"></span>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+
+$("#toselect").toSelect({
+	"initVal": 1,
+	"units": "Mbps",
+	"size": "small",
+	".devider": "devider",
+	"options": [{
+		"0": "无限制",
+		"1": "1.0Mbps",
+		"2": "2.0Mbps",
+		"4": "4.0Mbps",
+		".divider": ".divider",
+		".hand-set": "手动设置"
+	}]
+});
+
+$('#btnDisable').on('click', function() {
+	$('#toselect').disable(true);
+});
+
+$('#btnEnable').on('click', function() {
+	$('#toselect').disable(false);
+});
+
+$('#btnGetToselectVal').on('click', function() {
+	$('#textToselect').text($('#toselect').val());
+});
+
+
+</script>
+</body>
+</html>

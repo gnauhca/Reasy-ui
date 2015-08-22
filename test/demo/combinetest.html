@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>combinetest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+<br>
+<div id="part1" class="demo-panel">
+	
+	<div class="control-group component">Combine test</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">新密码</label>
+		<div class="controls">
+			<input type="text" id="newPwd" class="validatebox"> #newPwd
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">确认密码</label>
+		<div class="controls">
+			<input type="text" id="confirmPwd" class="validatebox" data-options='{"combineType": "equal", "relativeElems": ["self","#newPwd"], "msg": "两次密码输入不一致"}'>
+			<br>{"combineType": "equal", "relativeElems": "relativeElems": ["self","#equal"], "msg": "两次密码输入不一致"}
+		</div>
+	</div>
+
+
+	<br>
+	<br>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">IP地址</label>
+		<div class="controls">
+			<input type="text" id="ip" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "staticIp", "relativeElems": ["self", "#gateway", "#mask"], "msg": ""}]'>
+			<br>[{"type": "ip"}, {"combineType": "staticIp", "relativeElems": ["self", "#gateway", "#mask"], "msg": ""}]
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">子网掩码</label>
+		<div class="controls">
+			<input type="text" id="mask" class="validatebox"  data-options='{"type": "mask"}'><br>{"type": "mask"}
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">默认网关</label>
+		<div class="controls">
+			<input type="text" id="gateway" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "staticIp", "relativeElems": ["#ip", "self", "#mask"], "msg": ""}]'>
+			<br>[{"type": "ip"}, {"combineType": "staticIp", "relativeElems": ["#ip", "self", "#mask"], "msg": ""}]		
+		</div>
+	</div>
+
+
+	<br>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">主 DNS</label>
+		<div class="controls">
+			<input type="text" id="dns1" required class="validatebox"  data-options='{"type": "ip", "msg": ""}'>
+			<br>required {"type": "ip"}		
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<label for="" class="control-label">次 DNS</label>
+		<div class="controls">
+			<input type="text" id="dns2" class="validatebox" data-options='[{"type": "ip"}, {"combineType": "notequal", "relativeElems": ["#dns1", "self"], "msg": "主次DNS不能相同"}]'>
+			<br>[{"type": "ip"}, {"combineType": "notequal", "relativeElems": ["#dns1", "self"], "msg": "主次DNS不能相同"}]
+		</div>
+	</div>
+
+	<div class="control-group">
+		<input type="button" class="btn" id="submit1" value="check All">
+	</div>
+
+</div>
+
+
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+<script>
+var validateObj = null;
+$("#submit1").on("click", function() {
+	validateObj1.checkAll();
+});
+validateObj1 = $.validate({
+	wrapElem: "#part1",
+	success: function() {
+		$.alert("success");
+	}
+});
+
+
+</script>
+</body>
+</html>

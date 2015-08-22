@@ -1,0 +1,166 @@
+/**
+ * UI inputselect
+ *
+ * @section inputselect
+ */
+
+.input-append
+{
+    position: relative;
+
+    display: inline-block;
+
+    border: 1px solid #fff;
+
+    input[readonly]
+    {
+        cursor: initial;
+        background-color: #fff;
+        ime-mode: disabled;
+    }
+
+	input
+	{
+	    display: inline-block;
+	    float: left;
+
+	    @include border-radius($iptslt-ipt-radius);
+	}
+
+	.btn-group
+	{
+	    display: inline-block;
+
+	    width: 33px;
+	    height: 28px;
+	    margin-top: 0;
+	    margin-left: 0;
+
+	    white-space: nowrap;
+	    word-spacing: 0;
+
+		.btn-small
+		{
+		    line-height: 20px;
+
+		    display: inline-block;
+
+		    height: 20px;
+		    margin-left: 0;
+
+		    border-left: 0 none;
+
+		    @include border-radius($iptslt-btn-radius);
+
+			&:hover, &:focus
+			{
+				border: 1px solid #ccc;
+				border-left: 0 none;
+			}
+		}
+	}
+}
+
+
+.input-select
+{
+    z-index: $iptslt-menu-zidx;
+
+    width: 100%;
+}
+
+.input-append + .help-inline, input[type='button'] + .help-inline
+{
+    margin-left: 14px;
+}
+
+.dropdown-menu
+{
+    position: absolute;
+    z-index: $iptslt-menu-zidx;
+    top: 100%;
+	
+	margin-top: 1px;
+    min-width: 100%;
+    /*display:none;*/
+    padding: $iptslt-menu-padding;
+
+    list-style: none;
+
+    white-space: nowrap;
+
+    border: 1px solid #ccc;
+    background-color: #fff;
+
+    @include border-radius($iptslt-menu-radius);
+    @include background-clip(padding-box);
+    @include box-shadow(0 5px 10px rgba(0, 0, 0, .2));
+
+
+    *width: 99%;
+    text-color: #333;
+
+	&.ani-init
+	{
+	    /* transition: all .1s; 
+	    transform: scaleY(0);
+	    transform-origin: left top; */
+	    box-shadow: none;
+	}
+	&.ani-final
+	{
+	    transform: none;
+	    @include box-shadow(0 5px 10px rgba(0, 0, 0, .2));
+	}   
+
+	li
+	{
+	    margin: 0;
+
+	    text-align: left;
+
+		a
+		{
+			font-size: $iptslt-item-fsize;
+			display: block;
+			padding: $iptslt-item-padding;
+			cursor: pointer;
+			color: $iptslt-item-color;
+		}
+
+	} 
+
+	& > li > a:hover, & > li.focus > a
+	{
+	    text-decoration: none;
+
+	    color: #fff;
+	    background-color: $iptslt-item-focus-color;
+	}
+
+	.divider
+	{
+	    height: 1px;
+
+	    border-top: 1px solid #ccc;
+	}
+}
+
+/* input append btn*/
+.caret
+{
+    display: inline-block;
+
+    width: 0;
+    height: 0;
+    margin-top: 8px;
+
+    content: '';
+    vertical-align: top;
+
+    border-top: $iptslt-caret-width/2 solid #000;
+    border-right: $iptslt-caret-width/2 solid transparent;
+    border-left: $iptslt-caret-width/2 solid transparent;
+}
+
+

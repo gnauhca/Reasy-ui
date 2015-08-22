@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>alerttest</title>
+<link rel="stylesheet" href="../reasy-ui.css">
+<link rel="stylesheet" href="demo.css">
+<script src="../jquery.js"></script>
+<script src="../reasy-ui.js"></script>	
+</head>
+<body>
+
+
+<div class="demo-panel">
+
+	<div class="control-group component">
+		<label for="" class="control-label">Placeholder elem</label>
+		<div class="controls">
+			Click the alert btn
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label for="" class="control-label">Alert Btn</label>
+		<div class="controls">
+			<input type="button" class="btn" onclick='$.alert("Alert message!")' value="Alert Btn">
+		</div>
+	</div>
+
+
+	<script>
+	$('#pBtnSetVal').on('click', function() {
+		$('#placeholderIpt').val($('#placeholderIptVal').val());
+	});
+
+	$('#pBtnSetPlaceholder').on('click', function() {
+		$('#placeholderIpt').addPlaceholder($('#newPlaceholder').val());
+	});
+	</script>
+</div>
+
+</body>
+</html>
