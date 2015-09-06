@@ -24,8 +24,8 @@ QUnit.test('Value test: ', function() {
 	equal(this.$mac.val(), '00:00:00:00:00:00', 'MAC Value error');
 
 
-	this.$mac.val('00:00:00:00:00');
-	equal(this.$mac.val(), '00:00:00:00:00', 'MAC Value error');
+	this.$mac.val('00:00:00:00:00:');
+	equal(this.$mac.val(), '00:00:00:00:00:', 'MAC Value error');
 });
 
 //Disable

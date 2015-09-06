@@ -253,7 +253,7 @@ $.prototype.val = function (base) {
 
 		if (typeof(this.val) == "function") {
 			value = this.val.apply(this, valArguments);
-			if (!returnVal && typeof value !== "undefined") {
+			if (typeof value !== "undefined") {
 				returnVal = value;
 			}
 		}
@@ -263,7 +263,7 @@ $.prototype.val = function (base) {
 			$.each($(this).data("valFuns"), function(i, valFun) {
 
 				value = valFun.apply(that, valArguments);
-				if (!returnVal && typeof value !== "undefined") {
+				if (typeof value !== "undefined") {
 					returnVal = value;
 				}
 			});

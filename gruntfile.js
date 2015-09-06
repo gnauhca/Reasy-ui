@@ -194,7 +194,7 @@ grunt.registerTask('dist', ['dist-js', 'dist-css', 'copy']);
 
 
 //test测试
-grunt.registerTask('test-js', ['jshint']);
+grunt.registerTask('test-js', ['jshint','qunit']);
 grunt.registerTask('test-css', ['csslint:lax']);
 grunt.registerTask('test', ['test-js'/*, 'test-css'*/]);
 

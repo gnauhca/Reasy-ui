@@ -1,5 +1,5 @@
 /*!
- * reasy-ui.js v1.0.5 2015-08-21
+ * reasy-ui.js v1.0.5 2015-09-06
  * Copyright 2015 ET.W
  * Licensed under Apache License v2.0
  *
@@ -257,7 +257,7 @@ $.prototype.val = function (base) {
 
 		if (typeof(this.val) == "function") {
 			value = this.val.apply(this, valArguments);
-			if (!returnVal && typeof value !== "undefined") {
+			if (typeof value !== "undefined") {
 				returnVal = value;
 			}
 		}
@@ -267,7 +267,7 @@ $.prototype.val = function (base) {
 			$.each($(this).data("valFuns"), function(i, valFun) {
 
 				value = valFun.apply(that, valArguments);
-				if (!returnVal && typeof value !== "undefined") {
+				if (typeof value !== "undefined") {
 					returnVal = value;
 				}
 			});
@@ -908,7 +908,7 @@ var Textboxs = {
 		}
 
 		for (i = 0; i < len; i++) {
-			textboxs[i].value = textboxsValues[i];
+			textboxs[i].value = (textboxsValues[i] || '');
 		}
 		
 		// TODO: IE下聚焦隐藏的元素会报错

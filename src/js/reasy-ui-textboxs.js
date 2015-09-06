@@ -196,7 +196,7 @@ var Textboxs = {
 		}
 
 		for (i = 0; i < len; i++) {
-			textboxs[i].value = textboxsValues[i];
+			textboxs[i].value = (textboxsValues[i] || '');
 		}
 		
 		// TODO: IE下聚焦隐藏的元素会报错
