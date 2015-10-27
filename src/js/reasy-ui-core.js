@@ -1,9 +1,5 @@
 /*
  * REasy UI Core @VERSION
- * http://jqueryui.com
- *
- * Copyright 2015 jQuery Foundation and other contributors
- *
  */
 
 (function (win, doc) {

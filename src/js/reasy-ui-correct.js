@@ -1,8 +1,5 @@
 /*!
  * REasy UI Correct @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js

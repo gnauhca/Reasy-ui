@@ -1,13 +1,13 @@
 /*!
- * reasy-ui.js v1.0.5 2015-09-06
+ * reasy-ui.js v1.0.5 2015-10-28
  * Copyright 2015 ET.W
  * Licensed under Apache License v2.0
  *
  * The REasy UI for router, and themes built on top of the HTML5 and CSS3..
  */
 
-if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {
-	throw new Error("REasy-UI requires jQuery or REasy");
+if ("undefined" === typeof jQuery) {
+	throw new Error("REasy-UI requires jQuery");
 }
 
 (function (win, doc) {
@@ -305,9 +305,6 @@ $.fn.disable = function(disabled) {
 
 /*!
  * REasy UI animate @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -385,9 +382,6 @@ $.fn.animateHide = function(durTime) {
 
 /*!
  * REasy UI alert @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -431,9 +425,6 @@ $.extend({
 
 /*!
  * REasy UI Dialog @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -529,9 +520,6 @@ $.extend({
 
 /*!
  * REasy UI progressbar @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -712,9 +700,6 @@ $.progressBar = function() {
 
 /*!
  * REasy UI Textboxs @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -994,9 +979,6 @@ $.fn.toTextboxs = function (type, delVal) {
 
 /*!
  * REasy UI Inputs @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -1324,9 +1306,6 @@ $.fn.toTextboxs = function (type, delVal) {
 
 /*!
  * REasy UI Tip @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -1430,9 +1409,6 @@ $.fn.toTextboxs = function (type, delVal) {
 
 /*!
  * REasy UI Message @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -1496,9 +1472,6 @@ $.fn.toTextboxs = function (type, delVal) {
 
 /*!
  * REasy UI Select @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -1821,9 +1794,6 @@ $(document).on("click.re.toselect", ".input-append li:not(.divider)", clickItem)
 
 /*!
  * REasy UI Validate @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -2193,9 +2163,6 @@ $(function() {
 
 /*!
  * REasy UI Validate @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -2295,9 +2262,6 @@ $.validate.valid = $.valid;
 
 /*!
  * REasy UI Correct @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js
@@ -2374,9 +2338,6 @@ $.validate.valid = $.valid;
 
 /*!
  * REasy UI valid-lib @VERSION
- * http://reasyui.com
- *
- * Copyright 2015 reasy Foundation and other contributors
  *
  * Depends:
  *	reasy-ui-core.js

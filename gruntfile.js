@@ -25,8 +25,8 @@ grunt.initConfig({
 			' * The CSS for REasy UI.\n' +
 			' */\n\n',
 			
-	depend_check: 'if ("undefined" === typeof jQuery && "undefined" === typeof REasy) {\n' +
-			'	throw new Error("REasy-UI requires jQuery or REasy");\n' +
+	depend_check: 'if ("undefined" === typeof jQuery) {\n' +
+			'	throw new Error("REasy-UI requires jQuery");\n' +
 			'}\n\n',
 	
 	// Task configuration.
